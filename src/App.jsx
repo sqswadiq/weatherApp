@@ -353,13 +353,13 @@ function App() {
                 borderRadius: "15px"
               }}
             >
-              <div className="row small text-light">
-                <div className="col">
+              <div className="d-flex justify-content-between small text-light">
+                <div className="">
                   <div>Now</div>
                   <div className="d-flex align-items-center"><IoIosCloud size={20} className="me-1" />{temp?.temperature}°</div>
                 </div>
                 {weather?.list.slice(0, 4).map((time, index) => (
-                  <div className="col" key={index}>
+                  <div className="" key={index}>
                     {console.log("time", time)}
 
                     <div>{convertTimestampToTime(time?.dt)}</div>
@@ -367,10 +367,11 @@ function App() {
                   </div>
                 ))}
               </div>
-              <div className="row small text-light mt-2">
-                <hr />
+              <hr />
+              <div className="d-flex justify-content-between small text-light mt-2">
+
                 {weather?.list.slice(5, 10).map((time, index) => (
-                  <div className="col" key={index}>
+                  <div className="" key={index}>
                     {console.log("time", time)}
 
                     <div>{convertTimestampToTime(time?.dt)}</div>
