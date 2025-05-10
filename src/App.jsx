@@ -86,7 +86,7 @@ function App() {
 
   return (
     <div
-      className="container p-4 pb-5 d-flex justify-content-center align-items-center min-vh-100"
+      className="container-fluid p-4 pb-5 d-flex justify-content-center align-items-center min-vh-100"
       style={{
         backgroundImage: `(${myImage})`,
         minHeight: "100vh",
@@ -94,19 +94,18 @@ function App() {
       }}
     >
       <div
-        className="container"
+        className="container-fluid py-5"
         style={{
           // background: "rgba(255,255,255,0.7)",
           background: `url('https://images.unsplash.com/photo-1490735891913-40897cdaafd1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3Vuc2V0JTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D') center/cover no-repeat`,
           borderRadius: "2rem",
           maxWidth: 900,
-          padding: "2rem",
           textAlign: "center"
         }}
       >
-        <div className="row g-4 align-items-stretch justify-content-center align-items-center">
+        <div className="row g-4">
           {/* Left Weather Card */}
-          <div className="col-md-5">
+          <div className="col-sm-5">
             <div
               className="h-100 d-flex flex-column justify-content-between p-4"
               style={{
@@ -186,13 +185,13 @@ function App() {
                 borderRadius: "15px"
               }}
             >
-              <div className="d-flex justify-content-center small text-light">
-                <div className="mx-1">
+              <div className="d-flex justify-content-evenly small text-light">
+                <div className="">
                   <div>Now</div>
                   <div className="d-flex align-items-center"><IoIosCloud size={20} className="me-1" />{temp?.temperature}°</div>
                 </div>
                 {weather?.list.slice(0, 4).map((time, index) => (
-                  <div className="mx-1" key={index}>
+                  <div className="" key={index}>
                     {console.log("time", time)}
 
                     <div>{convertTimestampToTime(time?.dt)}</div>
@@ -200,11 +199,11 @@ function App() {
                   </div>
                 ))}
               </div>
-              <hr className="mx-3"/>
-              <div className="d-flex justify-content-center small text-light mt-2">
+              <hr className="mx-2"/>
+              <div className="d-flex justify-content-evenly small text-light mt-2">
 
                 {weather?.list.slice(5, 10).map((time, index) => (
-                  <div className="mx-1" key={index}>
+                  <div className="" key={index}>
                     {console.log("time", time)}
 
                     <div>{convertTimestampToTime(time?.dt)}</div>
